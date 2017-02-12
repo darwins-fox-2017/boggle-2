@@ -86,8 +86,6 @@ class BoggleBoard{
   }
 
   solve(){
-    let x = 0
-    let y = 0
     let letter = this.board.length * this.board[0].length // banyak huruf
     let kamus = this.kamus.length // semua kata dalam kamus
     let indexKamus = 0
@@ -104,7 +102,7 @@ class BoggleBoard{
         // this.checkAround(this.start[0].x,this.start[0].y,kataCari)
         for(let i = 0; i<kataCari.length; i++){
           this.checkAround(this.start[i].x,this.start[i].y,kataCari[i])
-        // }
+        }
       }else{
         indexKamus++
       }
