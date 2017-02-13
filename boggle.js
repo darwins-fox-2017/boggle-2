@@ -19,6 +19,15 @@ class BoggleBoard {
         return this.alfabet[indexAlfabet];
         return indexAlfabet
     }
+    checkword(words,board){
+      let availWord=[]
+      for (var i = 0; i < word.length; i++) {
+          if (this.solver(board,words[i])) {
+            availWord.push(words[i]);
+          }
+      }
+      return availWord;
+    }
 
     solver(board, word) {
         word = word.toUpperCase();
@@ -77,14 +86,14 @@ class BoggleBoard {
 
 
 }
-
+let word =['eat','stay','going','love','move'];
 var bogle = new BoggleBoard();
 let board = [
-    ['O', 'M', 'B', 'E'],
+    ['O', 'M', 'O', 'E'],
     ['V', 'O', 'L', 'K'],
     ['E', 'W', 'K', 'O'],
     ['G', 'T', 'Q', 'Z']
 ];
-
-console.log(bogle.solver(board, 'move'));
+console.log(bogle.checkword(word, board));
+//console.log(bogle.solver(board, 'move'));
 //console.log(bogle.checkNeigbor(0, 0,'P', board));
